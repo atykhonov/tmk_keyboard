@@ -87,10 +87,10 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
         EQL, 1,   2,   3,   4,   5,   ESC,
-        BSLS,Q,   W,   E,   R,   T,   FN2,
-        TAB, A,   S,   D,   F,   G,
-        LSFT,Z,   X,   C,   V,   B,   FN1,
-        LGUI,GRV, BSLS,LEFT,RGHT,
+        TAB, Q,   W,   E,   R,   T,   FN2,
+        CAPS, A,   S,   D,   F,   G,
+        LSFT, Z,   X,   C,   V,   B,   FN1,
+        LGUI,GRV, BSLS,LEFT,LALT,
                                       LCTL,LALT,
                                            HOME,
                                  BSPC,DEL, END,
@@ -99,7 +99,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              LBRC,Y,   U,   I,   O,   P,   RBRC,
                   H,   J,   K,   L,   SCLN,QUOT,
              FN1, N,   M,   COMM,DOT, SLSH,RSFT,
-                       LEFT,DOWN,UP,  RGHT,RGUI,
+                       FN5,DOWN,UP,  RGHT,RGUI,
         RALT,RCTL,
         PGUP,
         PGDN,ENT, SPC
@@ -168,6 +168,26 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS
     ),
 
+    KEYMAP(  // layer 4: navigation layer
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             SLCK,NLCK,PSLS,PAST,PAST,PMNS,BSPC,
+             TRNS,NO,  P7,  P8,  P9,  PMNS,BSPC,
+                  LEFT, DOWN, UP, RGHT, NO, NO,
+             TRNS,NO,  P1,  P2,  P3,  PPLS,PENT,
+                       TRNS,  PDOT,SLSH,PENT,PENT,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
 };
 
 /* id for user defined functions */
@@ -184,6 +204,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_SET(2, ON_PRESS),                  // FN2 - push Layer2
     ACTION_LAYER_SET(3, ON_PRESS),                  // FN3 - push Layer3
     ACTION_LAYER_SET(0, ON_PRESS),                  // FN4 - push Layer0
+    ACTION_LAYER_TAP_KEY(4, KC_SPC),                // FN5 - puhs Layer5, Navigation Layer
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
