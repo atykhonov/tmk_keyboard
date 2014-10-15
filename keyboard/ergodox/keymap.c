@@ -91,19 +91,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
         EQL, 1,   2,   3,   4,   5,   ESC,
-        BSLS,Q,   W,   E,   R,   T,   FN2,
-        TAB, A,   S,   D,   F,   G,
+        TAB,Q,   W,   E,   R,   T,   FN2,
+        CAPS, A,   S,   D,   F,   G,
         LSFT,Z,   X,   C,   V,   B,   FN1,
-        LGUI,GRV, BSLS,LEFT,RGHT,
+        RGUI,GRV, BSLS,RGUI,LALT,
                                       LCTL,LALT,
                                            HOME,
                                  BSPC,DEL, END,
         // right hand
              FN3, 6,   7,   8,   9,   0,   MINS,
-             LBRC,Y,   U,   I,   O,   P,   RBRC,
+             RBRC, Y,   U,   I,   O,   P,   LBRC,
                   H,   J,   K,   L,   SCLN,QUOT,
-             FN1, N,   M,   COMM,DOT, SLSH,RSFT,
-                       LEFT,DOWN,UP,  RGHT,RGUI,
+              FN9, N,   M,   COMM,DOT, SLSH,RSFT,
+                       FN5,DOWN,UP,  RGHT,LGUI,
         RALT,RCTL,
         PGUP,
         PGDN,ENT, SPC
@@ -172,11 +172,82 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS
     ),
 
+    KEYMAP(  // layer 4: navigation layer
+        // left hand
+        TRNS,FN10,FN11,FN12,FN13,FN14,TRNS,
+        TRNS,TRNS,F15,F16,TRNS,TRNS,TRNS,
+        TRNS,HOME,F14,END,TRNS,TRNS,
+        FN22,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             SLCK,FN15,FN16,FN17,FN18,FN19,FN22,
+             TRNS,NO,  P7,  P8,  F17,  BSPC,FN6,
+             LEFT, DOWN, UP, RGHT, F13, ENT,
+             TRNS,NO,  FN20,  FN21,  P3,  PPLS,FN8,
+                       TRNS,  PDOT,SLSH,PENT,ENT,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+
+    KEYMAP(  // Layer5: mouse and navigation, leftled:mid/blue+bot/green
+        // left hand
+        TRNS,NO,  NO,  NO,  NO,  NO,  NO,
+        TRNS,NO,  NO,  NO,  ACL0,NO,  TRNS,
+        TRNS,NO,  NO,  TRNS,ACL1,NO,
+        TRNS,NO,  NO,  TRNS,ACL2,NO,  TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
+                                      TRNS,TRNS,
+
+        TRNS,
+                                 TRNS,TRNS,TRNS,
+
+        // right hand
+             F16, MPLY,MPRV,MNXT,VOLD,VOLU,MUTE,
+             F14, BTN2,WH_L,WH_U,WH_D,WH_R,PGUP,
+                  BTN1,MS_L,MS_U,MS_D,MS_R,PGDN,
+             F15, BTN3,HOME,END, DEL, INS, NO,
+                       TRNS,TRNS,TRNS,TRNS,FN4,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+
+    KEYMAP(  // layer6: helpful layer for the home-row navigation
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+             TRNS, FN24, FN23, TRNS, TRNS, TRNS,
+             TRNS, TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS,
+                       TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
 };
 
 /* id for user defined functions */
 enum function_id {
     TEENSY_KEY,
+};
+
+enum macro_id {
+    SAVE,
+    HELLO,
+    VOLUP,
+    ALT_TAB,
 };
 
 /*
@@ -188,6 +259,32 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_SET(2, ON_PRESS),                  // FN2 - push Layer2
     ACTION_LAYER_SET(3, ON_PRESS),                  // FN3 - push Layer3
     ACTION_LAYER_SET(0, ON_PRESS),                  // FN4 - push Layer0
+    ACTION_LAYER_TAP_KEY(4, KC_SPC),                // FN5 - puhs Layer5, Navigation Layer
+    ACTION_MODS_KEY(MOD_RCTL, KC_LBRC),             // FN6 - undo
+    // ACTION_MACRO(SAVE),
+    ACTION_MODS_KEY(MOD_RGUI, KC_F10),
+    ACTION_MACRO(HELLO),
+    ACTION_LAYER_SET(5, ON_PRESS),                  // FN9
+
+    // actions for i3
+    ACTION_MODS_KEY(MOD_RGUI, KC_1),                // FN10
+    ACTION_MODS_KEY(MOD_RGUI, KC_2),                // FN11
+    ACTION_MODS_KEY(MOD_RGUI, KC_3),                // FN12
+    ACTION_MODS_KEY(MOD_RGUI, KC_4),                // FN13
+    ACTION_MODS_KEY(MOD_RGUI, KC_5),                // FN14
+    ACTION_MODS_KEY(MOD_RGUI, KC_6),                // FN15
+    ACTION_MODS_KEY(MOD_RGUI, KC_7),                // FN16
+    ACTION_MODS_KEY(MOD_RGUI, KC_8),                // FN17
+    ACTION_MODS_KEY(MOD_RGUI, KC_9),                // FN18
+    ACTION_MODS_KEY(MOD_RGUI, KC_0),                // FN19
+
+    // navigation actions
+    ACTION_MODS_KEY(MOD_RGUI, KC_F10),              // FN20, word backward
+    ACTION_MODS_KEY(MOD_RALT, KC_F),                // FN21, word forward
+
+    ACTION_LAYER_MOMENTARY(6),                      // FN22
+    ACTION_MODS_KEY(MOD_RSFT, KC_PGUP),             // FN23
+    ACTION_MODS_KEY(MOD_RSFT, KC_PGDN),             // FN24
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
@@ -236,3 +333,29 @@ action_t keymap_fn_to_action(uint8_t keycode)
 }
 #endif
 
+/*
+ * Macro definition
+ */
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+    switch (id) {
+        case HELLO:
+            return (record->event.pressed ?
+                    MACRO( I(0), T(H), T(E), T(L), T(L), W(255), T(O), END ) :
+                    MACRO_NONE );
+        case SAVE:
+            return (record->event.pressed ?
+                    MACRO( I(0), D(LCTL), D(B), U(B), U(LCTL), D(RCTL), D(SCLN), U(SCLN), U(RCTL), END ) :
+                    // MACRO( I(0), T(H), T(E), T(L), T(L), W(255), T(O), END ) :
+                    MACRO_NONE );
+        case VOLUP:
+            return (record->event.pressed ?
+                    MACRO( D(VOLU), U(VOLU), END ) :
+                    MACRO_NONE );
+        case ALT_TAB:
+            return (record->event.pressed ?
+                    MACRO( D(LALT), D(TAB), END ) :
+                    MACRO( U(TAB), END ));
+    }
+    return MACRO_NONE;
+}
