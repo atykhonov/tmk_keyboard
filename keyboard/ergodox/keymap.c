@@ -178,17 +178,17 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,F15,F16,TRNS,TRNS,TRNS,
         TRNS,HOME,F14,END,TRNS,TRNS,
         FN22,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,FN26,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             SLCK,FN15,FN16,FN17,FN18,FN19,FN22,
-             TRNS,NO,  P7,  P8,  F17,  BSPC,FN6,
+             TRNS, FN15, FN16, FN17,FN18,FN19,FN30,
+             TRNS,TRNS, TRNS, TRNS, TRNS, BSPC, TRNS,
              LEFT, DOWN, UP, RGHT, F13, ENT,
-             TRNS,NO,  FN20,  FN21,  P3,  PPLS,FN8,
-                       TRNS,  PDOT,SLSH,PENT,ENT,
-        TRNS,TRNS,
+             TRNS, TRNS, FN20, FN21, TRNS, TRNS, TRNS,
+                       FN31, TRNS, TRNS, TRNS, TRNS,
+        TRNS,4,
         TRNS,
         TRNS,TRNS,TRNS
     ),
@@ -201,8 +201,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,NO,  NO,  TRNS,ACL2,NO,  TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
-
-        TRNS,
+                                           TRNS,
                                  TRNS,TRNS,TRNS,
 
         // right hand
@@ -211,7 +210,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   BTN1,MS_L,MS_U,MS_D,MS_R,PGDN,
              F15, BTN3,HOME,END, DEL, INS, NO,
                        TRNS,TRNS,TRNS,TRNS,FN4,
-        TRNS,TRNS,
+        TRNS,5,
         TRNS,
         TRNS,TRNS,TRNS
     ),
@@ -231,8 +230,29 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
              TRNS, FN24, FN23, TRNS, TRNS, TRNS,
              TRNS, TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS,
-                       TRNS, TRNS, TRNS, TRNS, TRNS,
-        TRNS,TRNS,
+                          FN25, TRNS, TRNS, TRNS, TRNS,
+        TRNS,6,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+
+    KEYMAP(  // layer7: layer navigation for i3
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,FN8,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS, TRNS, TRNS, TRNS, FN29, TRNS, // FN29 to not break alt+backspace
+             TRNS, FN27, FN28, TRNS, TRNS, TRNS,
+             TRNS, FN20, FN21, TRNS, TRNS, TRNS, TRNS,
+                          FN31, TRNS, TRNS, TRNS, TRNS,
+        TRNS,7,
         TRNS,
         TRNS,TRNS,TRNS
     ),
@@ -263,7 +283,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RCTL, KC_LBRC),             // FN6 - undo
     // ACTION_MACRO(SAVE),
     ACTION_MODS_KEY(MOD_RGUI, KC_F10),
-    ACTION_MACRO(HELLO),
+    // ACTION_MACRO(HELLO),
+    ACTION_LAYER_ON_OFF(7),                         // FN8
     ACTION_LAYER_SET(5, ON_PRESS),                  // FN9
 
     // actions for i3
@@ -279,12 +300,22 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RGUI, KC_0),                // FN19
 
     // navigation actions
-    ACTION_MODS_KEY(MOD_RGUI, KC_F10),              // FN20, word backward
-    ACTION_MODS_KEY(MOD_RALT, KC_F),                // FN21, word forward
-
-    ACTION_LAYER_MOMENTARY(6),                      // FN22
+    ACTION_MODS_KEY(MOD_LALT, KC_N),                // FN20, WORD BACKWARD
+    ACTION_MODS_KEY(MOD_LALT, KC_Y),                // FN21, WORD FORWARD
+    // ACTION_LAYER_MOMENTARY(6),                   // FN22
+    ACTION_LAYER_SET_CLEAR(6),                      // FN22
     ACTION_MODS_KEY(MOD_RSFT, KC_PGUP),             // FN23
     ACTION_MODS_KEY(MOD_RSFT, KC_PGDN),             // FN24
+    ACTION_LAYER_SET(4, ON_BOTH),                   // FN25, deactivate layer #6
+    // ACTION_LAYER_TAP_KEY(7, KC_LALT),
+    // ACTION_LAYER_MOMENTARY(7),                   // FN26
+    ACTION_LAYER_SET_CLEAR(7),                      // FN26
+    ACTION_MODS_KEY(MOD_RGUI, KC_DOWN),             // FN27
+    ACTION_MODS_KEY(MOD_RGUI, KC_UP),               // FN28
+    ACTION_MODS_KEY(MOD_LALT, KC_BSPC),             // FN29
+    ACTION_MODS_KEY(MOD_RSFT, KC_INS),              // FN30
+    ACTION_LAYER_ON_OFF(4),                      // FN31
+    // ACTION_LAYER_OFF(4, on),                        // FN31
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
