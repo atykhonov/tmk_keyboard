@@ -92,21 +92,21 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         EQL, 1,   2,   3,   4,   5,   ESC,
         TAB,Q,   W,   E,   R,   T,   FN2,
-        CAPS, A,   S,   D,   F,   G,
+        FN16, A,   S,   D,   F,   G,
         LSFT,Z,   X,   C,   V,   B,   FN1,
-        RGUI,GRV, BSLS,RGUI,LALT,
+        RGUI,GRV, BSLS,FN18,FN14,
                                       LCTL,LALT,
                                            HOME,
                                  BSPC,DEL, END,
         // right hand
-             FN3, 6,   7,   8,   9,   0,   MINS,
-             RBRC, Y,   U,   I,   O,   P,   LBRC,
+             FN9, 6,   7,   8,   9,   0,   MINS,
+             RBRC, Y,   U,   I,   O,   FN15,   LBRC,
                   H,   J,   K,   L,   SCLN,QUOT,
               FN9, N,   M,   COMM,DOT, SLSH,RSFT,
                        FN5,DOWN,UP,  RGHT,LGUI,
         RALT,RCTL,
         PGUP,
-        PGDN,ENT, SPC
+        PGDN,ENT, RGUI
     ),
 
     KEYMAP(  // layer 1 : function and symbol keys
@@ -132,7 +132,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layer 2 : keyboard functions
         // left hand
-        FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -174,20 +174,20 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layer 4: navigation layer
         // left hand
-        TRNS,FN10,FN11,FN12,FN13,FN14,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,F15,F16,TRNS,TRNS,TRNS,
         TRNS,HOME,F14,END,TRNS,TRNS,
-        FN22,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,FN26,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             TRNS, FN15, FN16, FN17,FN18,FN19,FN30,
-             TRNS,TRNS, TRNS, TRNS, TRNS, BSPC, TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN17,
+             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
              LEFT, DOWN, UP, RGHT, F13, ENT,
-             TRNS, TRNS, FN20, FN21, TRNS, TRNS, TRNS,
-                       FN31, TRNS, TRNS, TRNS, TRNS,
+             TRNS, TRNS, FN10, FN11, TRNS, TRNS, TRNS,
+                         TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,4,
         TRNS,
         TRNS,TRNS,TRNS
@@ -215,7 +215,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS
     ),
 
-    KEYMAP(  // layer6: helpful layer for the home-row navigation
+    KEYMAP(  // Layer6: layer with PGUP and PGDOWN on home row
         // left hand
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -228,9 +228,9 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-             TRNS, FN24, FN23, TRNS, TRNS, TRNS,
+             TRNS, PGDN, PGUP, TRNS, TRNS, TRNS,
              TRNS, TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS,
-                          FN25, TRNS, TRNS, TRNS, TRNS,
+                          TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,6,
         TRNS,
         TRNS,TRNS,TRNS
@@ -248,19 +248,109 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  TRNS,TRNS,TRNS,
         // right hand
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS, TRNS, TRNS, TRNS, FN29, TRNS, // FN29 to not break alt+backspace
-             TRNS, FN27, FN28, TRNS, TRNS, TRNS,
-             TRNS, FN20, FN21, TRNS, TRNS, TRNS, TRNS,
-                          FN31, TRNS, TRNS, TRNS, TRNS,
+             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, // FN29 to not break alt+backspace
+             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+             TRNS, FN10, FN11, TRNS, TRNS, TRNS, TRNS,
+                          TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,7,
         TRNS,
         TRNS,TRNS,TRNS
     ),
+
+    KEYMAP(  // Layer8: transparent for correct layers deactivation
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,RGUI,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                       FN5,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+
+    KEYMAP(  // Layer9: transparent for correct layer deactivation
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,FN12,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+
+    KEYMAP(  // Layer10: transparent
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+/*
+    // templates to copy from
+    KEYMAP(  // LayerN: fully transparent
+        // left hand
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,RGUI,
+                                      TRNS,TRNS,
+                                           TRNS,
+                                 TRNS,TRNS,TRNS,
+        // right hand
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS
+    ),
+*/
 };
 
 /* id for user defined functions */
 enum function_id {
     TEENSY_KEY,
+    META,
+    ALT_OR_GUI,
+    ALT_BACKSPACE,
+    CTL_OR_SET_MARK,
 };
 
 enum macro_id {
@@ -268,10 +358,11 @@ enum macro_id {
     HELLO,
     VOLUP,
     ALT_TAB,
-};
 
+};
 /*
  * Fn action definition
+
  */
 static const uint16_t PROGMEM fn_actions[] = {
     ACTION_FUNCTION(TEENSY_KEY),                    // FN0 - Teensy key
@@ -287,45 +378,173 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_ON_OFF(7),                         // FN8
     ACTION_LAYER_SET(5, ON_PRESS),                  // FN9
 
-    // actions for i3
-    ACTION_MODS_KEY(MOD_RGUI, KC_1),                // FN10
-    ACTION_MODS_KEY(MOD_RGUI, KC_2),                // FN11
-    ACTION_MODS_KEY(MOD_RGUI, KC_3),                // FN12
-    ACTION_MODS_KEY(MOD_RGUI, KC_4),                // FN13
-    ACTION_MODS_KEY(MOD_RGUI, KC_5),                // FN14
-    ACTION_MODS_KEY(MOD_RGUI, KC_6),                // FN15
-    ACTION_MODS_KEY(MOD_RGUI, KC_7),                // FN16
-    ACTION_MODS_KEY(MOD_RGUI, KC_8),                // FN17
-    ACTION_MODS_KEY(MOD_RGUI, KC_9),                // FN18
-    ACTION_MODS_KEY(MOD_RGUI, KC_0),                // FN19
-
     // navigation actions
-    ACTION_MODS_KEY(MOD_LALT, KC_N),                // FN20, WORD BACKWARD
-    ACTION_MODS_KEY(MOD_LALT, KC_Y),                // FN21, WORD FORWARD
-    // ACTION_LAYER_MOMENTARY(6),                   // FN22
-    ACTION_LAYER_SET_CLEAR(6),                      // FN22
-    ACTION_MODS_KEY(MOD_RSFT, KC_PGUP),             // FN23
-    ACTION_MODS_KEY(MOD_RSFT, KC_PGDN),             // FN24
-    ACTION_LAYER_SET(4, ON_BOTH),                   // FN25, deactivate layer #6
-    // ACTION_LAYER_TAP_KEY(7, KC_LALT),
-    // ACTION_LAYER_MOMENTARY(7),                   // FN26
-    ACTION_LAYER_SET_CLEAR(7),                      // FN26
-    ACTION_MODS_KEY(MOD_RGUI, KC_DOWN),             // FN27
-    ACTION_MODS_KEY(MOD_RGUI, KC_UP),               // FN28
-    ACTION_MODS_KEY(MOD_LALT, KC_BSPC),             // FN29
-    ACTION_MODS_KEY(MOD_RSFT, KC_INS),              // FN30
-    ACTION_LAYER_ON_OFF(4),                      // FN31
-    // ACTION_LAYER_OFF(4, on),                        // FN31
+    ACTION_MODS_KEY(MOD_LALT, KC_N),                // FN10, WORD BACKWARD
+    ACTION_MODS_KEY(MOD_LALT, KC_Y),                // FN11, WORD FORWARD
+
+    ACTION_LAYER_MOMENTARY(8),                      // FN12 - pushs Layer8, is used for correct LGUI releasing
+    ACTION_LAYER_TAP_KEY(10, KC_RGUI),              // FN13 - pushs Layer8, is used for correct LALT releasing
+    ACTION_FUNCTION(ALT_OR_GUI),                    // FN14 - action for the function
+    ACTION_FUNCTION(ALT_BACKSPACE),                 // FN15 - Alt + Backspace
+    ACTION_FUNCTION_TAP(CTL_OR_SET_MARK),           // FN16 - control or set mark on tap
+    ACTION_MODS_KEY(MOD_RSFT, KC_INS),              // FN17 - Shift insert
+    ACTION_LAYER_MOMENTARY(6),                      // FN18 - Activate Layer6
 };
 
-void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
+void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
+    print("action_function called\n");
+    print("id  = "); phex(id); print("\n");
+    print("opt = "); phex(opt); print("\n");
+  
     if (id == TEENSY_KEY) {
         clear_keyboard();
         print("\n\nJump to bootloader... ");
         _delay_ms(250);
         bootloader_jump(); // should not return
         print("not supported.\n");
+    }
+
+    uint8_t layer = biton32(layer_state);
+
+    uint8_t alt_weak_mods, gui_weak_mods;
+    alt_weak_mods = MOD_BIT(KC_LALT);
+    gui_weak_mods = MOD_BIT(KC_RGUI);
+
+# define MODS_ALT_MASK (MOD_BIT(KC_LALT)|MOD_BIT(KC_RALT))
+    static uint8_t alt_mod;
+# define MODS_GUI_MASK (MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI))
+    static uint8_t gui_mod;
+
+    if (id == CTL_OR_SET_MARK) {
+
+        if (record->event.pressed) {
+            if (record->tap.count > 0 && !record->tap.interrupted) {
+                if (record->tap.interrupted) {
+                    dprint("tap interrupted\n");
+                    register_mods(MOD_BIT(KC_RCTL));
+                }
+            } else {
+                register_mods(MOD_BIT(KC_RCTL));
+            }
+        } else {
+            if (record->tap.count > 0 && !(record->tap.interrupted)) {
+                add_weak_mods(MOD_BIT(KC_RCTL));
+                send_keyboard_report();
+                register_code(KC_SPC);
+                unregister_code(KC_SPC);
+                del_weak_mods(MOD_BIT(KC_RCTL));
+                send_keyboard_report();
+                record->tap.count = 0;  // ad hoc: cancel tap
+            } else {
+                unregister_mods(MOD_BIT(KC_RCTL));
+            }
+        }
+
+        /* if (record->tap.count == 0 || record->tap.interrupted) { */
+        /*     add_mods(MOD_BIT(KC_RCTL)); */
+        /*     add_key(KC_SPC); */
+        /*     send_keyboard_report(); */
+        /* } else { */
+        /*     del_mods(MOD_BIT(KC_RCTL)); */
+        /*     del_key(KC_SPC); */
+        /*     send_keyboard_report(); */
+        /* } */
+    }
+
+    if (id == ALT_BACKSPACE) {
+        if (record->tap.count == 0 || record->tap.interrupted) {
+            if (layer == 4) {
+                gui_mod = get_mods() & MODS_GUI_MASK;
+                alt_mod = get_mods() & MODS_ALT_MASK;
+                if (record->event.pressed) {
+                    if (gui_mod || alt_mod) {
+                        del_mods(MOD_BIT(KC_RGUI));
+                        add_mods(MOD_BIT(KC_LALT));
+                        add_key(KC_BSPC);
+                        send_keyboard_report();
+                        del_mods(MOD_BIT(KC_LALT));
+                        add_mods(MOD_BIT(KC_RGUI));
+                    } else {
+                        add_key(KC_BSPC);
+                        send_keyboard_report();
+                    }
+                } else {
+                    /* if (gui_mod && alt_mod) { */
+                    /*     del_weak_mods(alt_weak_mods); */
+                    /* } */
+                    // del_mods(MOD_BIT(KC_LALT));
+                    // del_mods(MOD_BIT(KC_RGUI));
+                    del_key(KC_BSPC);
+                    send_keyboard_report();
+                }
+            } else {
+                del_mods(MOD_BIT(KC_LALT));
+                send_keyboard_report();
+                if (record->event.pressed) {
+                    add_key(KC_P);
+                    send_keyboard_report();
+                } else {
+                    del_key(KC_P);
+                    send_keyboard_report();
+                }
+            }
+        }
+    }
+
+    if (id == ALT_OR_GUI) {
+        if (record->tap.count == 0 || record->tap.interrupted) {
+            if (layer == 0) {
+                if (record->event.pressed) {
+                    add_mods(MOD_BIT(KC_LALT));
+                    send_keyboard_report();
+                } else {
+                    del_mods(MOD_BIT(KC_LALT));
+                    del_mods(MOD_BIT(KC_RGUI));
+                    send_keyboard_report();
+                }
+            } else if (layer == 4) {
+                uint8_t gui_weak_mods;
+                gui_weak_mods = MOD_BIT(KC_RGUI);
+                if (record->event.pressed) {
+                    add_mods(MOD_BIT(KC_RGUI));
+                    send_keyboard_report();
+                } else {
+                    del_mods(MOD_BIT(KC_LALT));
+                    del_mods(MOD_BIT(KC_RGUI));
+                    send_keyboard_report();
+                }
+            }
+            /*
+            uint8_t weak_mods;
+            uint8_t layer;
+
+            if (id == ALT_OR_GUI) {
+                weak_mods = MOD_BIT(KC_LCTL) | MOD_BIT(KC_LALT);
+                layer     = 5;
+            } else {
+                weak_mods = MOD_BIT(KC_RCTL) | MOD_BIT(KC_RALT);
+                layer     = 6;
+            }
+
+            if (record->event.pressed) {
+                layer_on(layer);
+                add_weak_mods(weak_mods);
+            } else {
+                del_weak_mods(weak_mods);
+                layer_off(layer);
+            }
+        } else {
+            if (record->event.pressed) {
+                add_key(KC_ENT);
+                send_keyboard_report();
+            } else {
+                del_key(KC_ENT);
+                send_keyboard_report();
+            }
+        }
+            */
+        }
     }
 }
 
