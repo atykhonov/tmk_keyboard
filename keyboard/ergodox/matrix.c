@@ -69,6 +69,7 @@ uint8_t matrix_cols(void)
 void matrix_init(void)
 {
     // initialize row and col
+    debug_enable = true;
     init_ergodox();
     mcp23018_status = init_mcp23018();
     ergodox_blink_all_leds();
