@@ -95,40 +95,40 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN16, A,   S,   D,   F,   G,
         LSFT,Z,   X,   C,   V,   B,   FN1,
         RGUI,GRV, BSLS,FN18,FN14,
-                                      LCTL,LALT,
-                                           HOME,
-                                 BSPC,DEL, END,
+        LCTL,LALT,
+        HOME,
+        BSPC,DEL, END,
         // right hand
-             FN9, 6,   7,   8,   9,   0,   MINS,
-             RBRC, Y,   U,   I,   O,   FN15,   LBRC,
-                  H,   J,   K,   L,   SCLN,QUOT,
-              FN9, N,   M,   COMM,DOT, SLSH,RSFT,
-                       FN5,DOWN,UP,  RGHT,LGUI,
+        FN9, 6,   7,   8,   9,   0,   MINS,
+        RBRC, Y,   U,   I,   O,   FN15,   LBRC,
+        H,   J,   K,   L,   SCLN,QUOT,
+        FN9, N,   M,   COMM,DOT, SLSH,RSFT,
+        FN5,DOWN,UP,RCTL,LGUI,
         RALT,RCTL,
         PGUP,
         PGDN,ENT, RGUI
-    ),
+        ),
 
     KEYMAP(  // layer 1 : function and symbol keys
         // left hand
-        TRNS,F1,  F2,  F3,  F4,  F5,  F11,
+        TRNS,F1,  F2,  F3,  F4,  F5,  F6,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN4,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             F12, F6,  F7,  F8,  F9,  F10, TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        F6,  F7,  F8,  F9,  F10, F11, F12,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // layer 2 : keyboard functions
         // left hand
@@ -137,19 +137,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // layer 3: numpad
         // left hand
@@ -158,19 +158,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             SLCK,NLCK,PSLS,PAST,PAST,PMNS,BSPC,
-             TRNS,NO,  P7,  P8,  P9,  PMNS,BSPC,
-                  NO,  P4,  P5,  P6,  PPLS,PENT,
-             TRNS,NO,  P1,  P2,  P3,  PPLS,PENT,
-                       P0,  PDOT,SLSH,PENT,PENT,
+        SLCK,NLCK,PSLS,PAST,PAST,PMNS,BSPC,
+        TRNS,NO,  P7,  P8,  P9,  PMNS,BSPC,
+        NO,  P4,  P5,  P6,  PPLS,PENT,
+        TRNS,NO,  P1,  P2,  P3,  PPLS,PENT,
+        P0,  PDOT,SLSH,PENT,PENT,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // layer 4: navigation layer
         // left hand
@@ -179,19 +179,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,HOME,F14,END,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN17,
-             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-             LEFT, DOWN, UP, RGHT, F13, ENT,
-             TRNS, TRNS, FN10, FN11, TRNS, TRNS, TRNS,
-                         TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN17,
+        TRNS,TRNS, TRNS, TRNS, F17, TRNS, TRNS,
+        LEFT, DOWN, UP, RGHT, F13, ENT,
+        TRNS, TRNS, FN10, FN11, TRNS, TRNS, TRNS,
+        TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,4,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // Layer5: mouse and navigation, leftled:mid/blue+bot/green
         // left hand
@@ -200,20 +200,20 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,NO,  NO,  TRNS,ACL1,NO,
         TRNS,NO,  NO,  TRNS,ACL2,NO,  TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
 
         // right hand
-             F16, MPLY,MPRV,MNXT,VOLD,VOLU,MUTE,
-             F14, BTN2,WH_L,WH_U,WH_D,WH_R,PGUP,
-                  BTN1,MS_L,MS_U,MS_D,MS_R,PGDN,
-             F15, BTN3,HOME,END, DEL, INS, NO,
-                       TRNS,TRNS,TRNS,TRNS,FN4,
+        F16, MPLY,MPRV,MNXT,VOLD,VOLU,MUTE,
+        F14, BTN2,WH_L,WH_U,WH_D,WH_R,PGUP,
+        BTN1,MS_L,MS_U,MS_D,MS_R,PGDN,
+        F15, BTN3,HOME,END, DEL, INS, NO,
+        TRNS,TRNS,TRNS,TRNS,FN4,
         TRNS,5,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // Layer6: layer with PGUP and PGDOWN on home row
         // left hand
@@ -222,19 +222,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-             TRNS, PGDN, PGUP, TRNS, TRNS, TRNS,
-             TRNS, TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS,
-                          TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS, PGDN, PGUP, TRNS, TRNS, TRNS,
+        TRNS, TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,6,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // layer7: layer navigation for i3
         // left hand
@@ -243,19 +243,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,FN8,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, // FN29 to not break alt+backspace
-             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-             TRNS, FN10, FN11, TRNS, TRNS, TRNS, TRNS,
-                          TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, // FN29 to not break alt+backspace
+        TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+        TRNS, FN10, FN11, TRNS, TRNS, TRNS, TRNS,
+        TRNS, TRNS, TRNS, TRNS, TRNS,
         TRNS,7,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // Layer8: transparent for correct layers deactivation
         // left hand
@@ -264,19 +264,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,RGUI,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       FN5,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        FN5,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // Layer9: transparent for correct layer deactivation
         // left hand
@@ -285,19 +285,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,FN12,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
+        TRNS,TRNS,
+        TRNS,
+        TRNS,TRNS,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
 
     KEYMAP(  // Layer10: transparent
         // left hand
@@ -306,41 +306,41 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
-        // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
-        TRNS,TRNS,TRNS
-    ),
-/*
-    // templates to copy from
-    KEYMAP(  // LayerN: fully transparent
-        // left hand
+        TRNS,TRNS,TRNS,
+        // right hand
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,RGUI,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
-        // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
-    ),
+        ),
+/*
+// templates to copy from
+KEYMAP(  // LayerN: fully transparent
+// left hand
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,RGUI,
+TRNS,TRNS,
+TRNS,
+TRNS,TRNS,TRNS,
+// right hand
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,TRNS,TRNS,TRNS,
+TRNS,TRNS,
+TRNS,
+TRNS,TRNS,TRNS
+),
 */
 };
 
